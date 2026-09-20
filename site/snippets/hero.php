@@ -39,7 +39,14 @@ $textStyle = $model->heroTextColor()->isNotEmpty()
 <section class="<?= $fullWidth ? '' : 'max-w-6xl mx-auto px-4 pt-3' ?>">
   <div class="relative overflow-hidden <?= $fullWidth ? '' : 'rounded-xl' ?>" style="<?= $heroStyle ?>">
     <?php if ($hasOverlay && $model->heroOverlayColor()->isNotEmpty()): ?>
-      <div class="absolute inset-0" style="background-color: <?= esc($model->heroOverlayColor(), 'attr') ?>;"></div>
+      <?php
+      // A gradient instead of a flat fill, so the image stays visible: the
+      // chosen color fades from 70% at the bottom to 20% at the top. Stops are
+      // built with color-mix() since the picked color is a hex value with no
+      // alpha channel to tweak. Tune the two percentages to taste.
+      $overlay = esc($model->heroOverlayColor(), 'attr');
+      ?>
+      <div class="absolute inset-0" style="background-image: linear-gradient(to top, color-mix(in srgb, <?= $overlay ?> 80%, transparent), color-mix(in srgb, <?= $overlay ?> 30%, transparent));"></div>
     <?php endif ?>
 
     <div class="relative max-w-5xl mx-auto px-4 sm:px-12 py-10 sm:py-20 text-center" style="<?= $textStyle ?>">

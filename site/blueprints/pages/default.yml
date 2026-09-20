@@ -20,6 +20,14 @@ tabs:
             template: default
           files:
             type: files
+          extraFields:
+            type: fields
+            fields:
+              pageExcerpt:
+                label: Page excerpt
+                type: textarea
+                buttons: false
+                size: small
 
   hero:
     label: Hero

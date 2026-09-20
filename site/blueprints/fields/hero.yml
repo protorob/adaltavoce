@@ -8,14 +8,14 @@
 # (site or page) this group ends up attached to — see ModelWithContent::query().
 .hero-swatches: &heroSwatches
   "#ffffff": White
-  "#fafafa": Neutral 50
-  "#f5f5f5": Neutral 100
+  "#4D406B": Brand Purple
+  "#272036": Dark Purple
+  "#25D366": WhatsApp Green
   "#e5e5e5": Neutral 200
   "#a3a3a3": Neutral 400
   "#404040": Neutral 700
   "#262626": Neutral 800
   "#171717": Neutral 900
-  "#000000": Black
 
 type: group
 fields:
@@ -108,6 +108,7 @@ fields:
   heroImageOverlay:
     label: Add color overlay
     type: toggle
+    help: A subtle gradient (stronger at the bottom) so the image stays visible.
     when:
       heroBackgroundType: image
 

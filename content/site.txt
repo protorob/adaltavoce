@@ -14,7 +14,7 @@ Ctaurl: https://api.whatsapp.com/send/?phone=393291114874&text=Salve+vorrei+info
 
 ----
 
-Ctacolor: #3ca535
+Ctacolor: #25d366
 
 ----
 
@@ -43,9 +43,9 @@ Herobuttons:
 - 
   icon: ""
   label: Le nostre attività →
-  url: '#'
-  color: '#ff9400'
-  textcolor: '#141414'
+  url: '#home'
+  color: '#272036'
+  textcolor: '#ffffff'
 
 ----
 
@@ -65,7 +65,7 @@ Heroimageoverlay: true
 
 ----
 
-Herooverlaycolor: #53296b
+Herooverlaycolor: #4d406b
 
 ----
 
@@ -73,7 +73,7 @@ Herobackgroundcolor:
 
 ----
 
-Logo: 
+Logo: - file://qcyybdctpxnlo3if
 
 ----
 

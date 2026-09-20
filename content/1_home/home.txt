@@ -34,19 +34,19 @@ Herofullwidth: false
 
 ----
 
-Herobackgroundtype: 
+Herobackgroundtype: image
 
 ----
 
-Herobackgroundimage: 
+Herobackgroundimage: - file://c8vzmygyqe3ksq9i
 
 ----
 
-Heroimageoverlay: false
+Heroimageoverlay: true
 
 ----
 
-Herooverlaycolor: 
+Herooverlaycolor: #4d406b
 
 ----
 

@@ -1,6 +1,10 @@
 <?php
 $navItems = $site->children()->listed();
 $logo = $site->logo()->toFile();
+
+// Logo size — tweak here. Sizes are rem-based and the root font is 125%, so
+// h-12 = 3rem = 60px (the header itself is h-20 = 100px). Try h-10 … h-16.
+$logoClass = 'h-12 w-auto';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,13 +21,13 @@ $logo = $site->logo()->toFile();
 
     <a href="<?= $site->url() ?>" class="flex items-center shrink-0 font-semibold tracking-tight text-lg">
       <?php if ($logo): ?>
-        <img src="<?= $logo->url() ?>" alt="<?= esc($site->title()) ?>" class="h-8 w-auto">
+        <img src="<?= $logo->url() ?>" alt="<?= esc($site->title()) ?>" class="<?= $logoClass ?>">
       <?php else: ?>
         <?= $site->title() ?>
       <?php endif ?>
     </a>
 
-    <div class="hidden sm:flex items-center gap-6">
+    <div class="hidden nav:flex items-center gap-6">
       <nav class="flex items-center gap-8 text-sm">
         <?php foreach ($navItems as $item): ?>
           <?php $subItems = $item->children()->listed() ?>
@@ -57,7 +61,7 @@ $logo = $site->logo()->toFile();
       <?php snippet('language-switcher') ?>
     </div>
 
-    <div class="flex items-center gap-3 sm:hidden">
+    <div class="flex items-center gap-3 nav:hidden">
       <?php snippet('cta-button', ['class' => 'text-xs px-3 py-1.5']) ?>
       <button id="menu-toggle" class="p-2" aria-label="Toggle menu">
         <span class="block w-5 h-px bg-current mb-1.5"></span>
@@ -67,7 +71,7 @@ $logo = $site->logo()->toFile();
     </div>
   </div>
 
-  <nav id="mobile-menu" class="sm:hidden grid grid-rows-[0fr] opacity-0 -translate-y-1 pointer-events-none transition-all duration-200">
+  <nav id="mobile-menu" class="nav:hidden grid grid-rows-[0fr] opacity-0 -translate-y-1 pointer-events-none transition-all duration-200">
     <div class="overflow-hidden">
       <div class="border-t border-neutral-200 px-4 py-4 flex flex-col gap-4 text-sm">
         <?php foreach ($navItems as $item): ?>

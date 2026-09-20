@@ -2,11 +2,11 @@ Title: Chi siamo
 
 ----
 
-Text: [{"content":{"text":"<p>L'associazione ad Alta Voce APS nasce nel 2015 a Montevago con lo scopo di promuovere l'importanza della lettura, dell'arte, della creatività e della cultura in ogni sua forma e declinazione, coinvolgendo famiglie e minori.</p><p>La nostra missione è contrastare la povertà educativa attraverso iniziative ed attività educative, stimolanti e fondamentali per la crescita individuale e collettiva. Da allora portiamo avanti, nel Comune di Montevago e non solo, un'azione costante di promozione e sensibilizzazione culturale.</p>"},"id":"a09222c2-7d9d-4697-adfa-24fbbbb0c5ee","isHidden":false,"type":"text"}]
+Text: [{"content":{"text":"<p>La nostra missione è contrastare la povertà educativa attraverso iniziative ed attività educative, stimolanti e fondamentali per la crescita individuale e collettiva. Da allora portiamo avanti, nel Comune di Montevago e non solo, un'azione costante di promozione e sensibilizzazione culturale.</p>"},"id":"a09222c2-7d9d-4697-adfa-24fbbbb0c5ee","isHidden":false,"type":"text"}]
 
 ----
 
-Herotoggle: false
+Herotoggle: true
 
 ----
 
@@ -14,15 +14,15 @@ Eyebrow:
 
 ----
 
-Herotitle: 
+Herotitle: Chi Siamo
 
 ----
 
-Herodescription: 
+Herodescription: L'associazione ad Alta Voce APS nasce nel 2015 a Montevago con lo scopo di promuovere l'importanza della lettura, dell'arte, della creatività e della cultura in ogni sua forma e declinazione, coinvolgendo famiglie e minori.
 
 ----
 
-Herotextcolor: 
+Herotextcolor: #ffffff
 
 ----
 
@@ -30,23 +30,23 @@ Herobuttons:
 
 ----
 
-Herofullwidth: false
+Herofullwidth: true
 
 ----
 
-Herobackgroundtype: 
+Herobackgroundtype: image
 
 ----
 
-Herobackgroundimage: 
+Herobackgroundimage: - file://mgimybxngml3ihut
 
 ----
 
-Heroimageoverlay: false
+Heroimageoverlay: true
 
 ----
 
-Herooverlaycolor: 
+Herooverlaycolor: #6748c4
 
 ----
 

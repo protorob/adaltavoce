@@ -3,6 +3,13 @@
 
 @theme {
   --font-sans: "Inter", sans-serif;
+
+  /* Where the header switches from the hamburger menu to the full desktop nav.
+     Used as the `nav:` variant in site/snippets/header.php (nav:flex, nav:hidden).
+     rem-based, and the root is 125% (below), so 1rem = 20px: 40rem = 800px,
+     48rem = 960px, 64rem = 1280px. Raise it if the nav items wrap or crowd
+     the logo before the menu collapses. */
+  --breakpoint-nav: 64rem;
 }
 
 html {

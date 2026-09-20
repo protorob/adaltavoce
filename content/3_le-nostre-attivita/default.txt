@@ -6,6 +6,10 @@ Text: [{"content":{"page":["page://u5kufd5afnf0nndr"]},"id":"e3fcaf20-7963-443c-
 
 ----
 
+Pageexcerpt: 
+
+----
+
 Herotoggle: true
 
 ----
@@ -34,23 +38,23 @@ Herofullwidth: true
 
 ----
 
-Herobackgroundtype: color
+Herobackgroundtype: image
 
 ----
 
-Herobackgroundimage: 
+Herobackgroundimage: - file://28pch1k4jn0omf0l
 
 ----
 
-Heroimageoverlay: false
+Heroimageoverlay: true
 
 ----
 
-Herooverlaycolor: #000000
+Herooverlaycolor: #4d406b
 
 ----
 
-Herobackgroundcolor: #1fa39a
+Herobackgroundcolor: 
 
 ----
 
