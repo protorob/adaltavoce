@@ -61,7 +61,7 @@ npm install
 npm run build
 ```
 
-`kirby/`, `vendor/`, `assets/css`, `assets/js` and `node_modules/` are not committed — `composer install` and `npm run build` restore them.
+`kirby/`, `vendor/`, `assets/css`, `assets/js`, `assets/woff2` and `node_modules/` are not committed — `composer install` and `npm run build` restore them.
 
 ## Run locally
 
@@ -91,10 +91,13 @@ The header and footer are driven by `site/blueprints/site.yml`, under Panel → 
 - **Company information tab** — a site logo upload (shown in the header in place of the text title, once set), company name/address/phone/email, and a repeatable social links structure (icon + label + URL).
   - **Legal pages** is a repeatable structure (one `page` picker per row) — add as many legal pages as needed, in whatever order they should appear in the footer. Each row just picks a page; the link text is that page's own title. It currently lists the Privacy Policy and the Cookie Policy (both under `content/legal/`, which is unlisted so it doesn't appear in the main menu).
 - **Main menu** — driven by `$site->children()->listed()`. A top-level item with listed children gets a one-level dropdown on desktop (CSS-only, opens on hover or keyboard focus); the mobile menu always lists those children indented under their parent. Pages set to unlisted or draft don't appear.
-- **Header tweaks** (two single-edit spots, no Panel field):
-  - **Logo size** — `$logoClass` at the top of `site/snippets/header.php` (default `h-12 w-auto`). Sizes are rem-based and the root font is 125%, so `h-12` = 60px; the header bar itself is `h-20` (100px).
-  - **Mobile-menu breakpoint** — `--breakpoint-nav` in `src/main.css`'s `@theme` block (default `40rem`, i.e. 800px). Below it the hamburger menu shows; at or above it the full nav shows. Raise it (e.g. `64rem` = 1280px) if the nav items wrap or crowd the logo before the menu collapses. `header.php` uses it as the `nav:` variant (`nav:flex`, `nav:hidden`) rather than `sm:`, which is why it's a single value. Re-run `npm run build` after changing it.
-- **Base font size** — `src/main.css` sets `html { font-size: 125% }`, so every Tailwind size (text, spacing and the `max-w-*` containers) renders 25% larger than Tailwind's defaults.
+- **Header tweaks** (single-edit spots, no Panel field):
+  - **Logo size** — `$logoClass` at the top of `site/snippets/header.php` (default `h-9 nav:h-12 w-auto max-w-full object-contain object-left`): `h-9` on phones and tablets, `h-12` from the desktop-nav breakpoint up. The logo file is roughly 4:1, so that is about 144px wide on a phone and 240px on desktop. It scales with the root font size below, and `max-w-full` + `min-w-0` on its link mean it can never push the hamburger out of the header.
+  - **Header height** — `h-16 nav:h-20` on the inner container of `header.php`.
+  - **Desktop-nav breakpoint** — `--breakpoint-nav` in `src/main.css`'s `@theme` block (default `64rem`). Below it: hamburger menu and the floating call-to-action button; at or above it: the full nav with the button inside it. Raise it if the nav items wrap or crowd the logo before the menu collapses. `header.php` and `cta-button.php` use it as the `nav:` variant (`nav:flex`, `nav:hidden`, `nav:h-12`) rather than `sm:`, which is why it's a single value. **Media queries resolve `rem` against the browser's default 16px, not the `<html>` font size**, so `64rem` is 1024px on every device regardless of the root scale below. Re-run `npm run build` after changing it.
+- **Mobile call-to-action** — below the desktop-nav breakpoint the header carries only the logo and the hamburger; the call-to-action (WhatsApp) becomes a round **floating button fixed to the bottom-right** of the screen, rendered by `cta-button.php` with `floating => true` from `footer.php` (outside `<header>`). It uses the same icon, label and colors as the desktop button; the label stays available to screen readers. If no icon is set it falls back to a small pill with the label text. It sits under the header (`z-30` vs `z-40`) so an open mobile menu is never covered, and adds the iPhone safe-area inset to its bottom offset.
+- **Font size** — `src/main.css` scales the `<html>` font size with the screen: 16px on phones, 18px from 640px, 20px from 1024px. Every Tailwind size (text, spacing, `max-w-*`, header height) is rem-based, so this one rule scales the whole site; edit the two `@media` blocks in `main.css` to change the steps.
+- **Font** — Inter is **self-hosted**: `src/main.css` declares the variable font (weights 100–900, Latin subset only, ~48 KB) from the `@fontsource-variable/inter` npm package, and Vite copies the file to `assets/woff2/`. There is deliberately no Google Fonts link — it would send visitors' IPs to Google and contradict the cookie policy's "no third-party resources". `--font-sans` falls back to the system UI font if the file fails to load.
 - `site/snippets/footer.php` and `header.php` render all of the above and degrade cleanly when a field is empty (e.g. no logo → falls back to the text title; no social links → nothing renders in that row).
 - Icons (CTA and social links) use [`tobimori/kirby-icon-field`](https://github.com/tobimori/kirby-icon-field) (installed via Composer, `type: icon` in the blueprint), reading SVGs from `assets/icons/` (tracked in git, unlike `assets/css`/`assets/js`). A starter set of common platforms ships in that folder (Facebook, Instagram, X, LinkedIn, YouTube, TikTok, WhatsApp, Pinterest) — drop in more `.svg` files there as needed and they show up in the field's picker automatically.
   - The plugin caches its `assets/icons/` folder scan by default, keyed by the field's config rather than the folder's actual contents — so a new `.svg` won't show up in the Panel until that cache is cleared (delete `site/cache/<host>/tobimori/`). `site/config/config.php` disables this cache (`'tobimori.icon-field' => ['cache' => false]`) so new icons always show up immediately — worth re-enabling (remove that config block) once the icon set has stabilized, since it adds a small perf cost on every Panel load of an icon field.
@@ -167,7 +170,7 @@ npm run dev     # watch mode, rebuilds on changes to src/, templates, snippets
 npm run build   # production build → assets/css/ and assets/js/
 ```
 
-- `src/main.css` — Tailwind entry point, `@theme` customizations (font, mobile-menu breakpoint), the 125% root font size, custom CSS
+- `src/main.css` — Tailwind entry point, `@theme` customizations (font, mobile-menu breakpoint), the responsive root font size, the self-hosted Inter `@font-face`, custom CSS
 - `src/main.js` — entry point for JS behavior (mobile menu toggle)
 - `site/snippets/header.php` / `site/snippets/footer.php` — shared page chrome, styled with Tailwind utility classes
 - `site/templates/default.php` — the page template every page uses
@@ -319,7 +322,7 @@ Only `content/` is pulled — never code, accounts, sessions or cache.
 - analytics is **[Umami](https://umami.is), self-hosted** on a Hetzner server in Germany with default settings (no cookies, no stored IP addresses, no profiling);
 - the data controller is Ad Alta Voce APS (represented by its president and legal representative) and privacy requests go to the association's PEC address.
 
-**Umami is not installed yet** — it will be added once the first deploy is confirmed to work. The tracker script will point at the association's own Umami instance and must stay on default (cookieless) settings.
+**Umami** is installed as a single `<script defer … data-website-id=…>` tag in the `<head>` of `site/snippets/header.php`, pointing at the association's own Umami instance. It must stay on default (cookieless) settings — don't add attributes or Umami features that set cookies or store identifiers.
 
 **If you change any of the facts above, update both policy pages first** (Panel → Legal) — and if it involves cookies or a third-party service, a consent banner will probably be needed too. Typical triggers: Google Fonts, a YouTube or Google Maps embed, a contact or newsletter form, a donation button, or any analytics tool other than Umami.
 

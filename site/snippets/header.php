@@ -2,9 +2,13 @@
 $navItems = $site->children()->listed();
 $logo = $site->logo()->toFile();
 
-// Logo size — tweak here. Sizes are rem-based and the root font is 125%, so
-// h-12 = 3rem = 60px (the header itself is h-20 = 100px). Try h-10 … h-16.
-$logoClass = 'h-12 w-auto';
+// Logo size — tweak here. Sizes are rem-based and the root font size changes
+// with the screen (16px phones → 18px from 640px → 20px from 1024px, see
+// src/main.css), so the logo scales with it. The file is ~4:1 wide, so
+// h-9 ≈ 144px wide on a phone and h-12 ≈ 240px wide on desktop (`nav:` = the
+// desktop-nav breakpoint). Try h-8 … h-10 for mobile and h-10 … h-16 for desktop.
+// max-w-full + object-contain keep it from ever overflowing the header.
+$logoClass = 'h-9 nav:h-12 w-auto max-w-full object-contain object-left';
 ?>
 <!DOCTYPE html>
 <html lang="<?= $kirby->multilang() ? $kirby->language()->code() : 'it' ?>">
@@ -18,9 +22,9 @@ $logoClass = 'h-12 w-auto';
 <body class="min-h-screen flex flex-col bg-white font-sans text-neutral-800 antialiased">
 
 <header id="site-header" class="relative z-40 border-b border-neutral-200">
-  <div class="max-w-6xl mx-auto px-4 h-20 flex items-center justify-between">
+  <div class="max-w-6xl mx-auto px-4 h-16 nav:h-20 flex items-center justify-between gap-4">
 
-    <a href="<?= $site->url() ?>" class="flex items-center shrink-0 font-semibold tracking-tight text-lg">
+    <a href="<?= $site->url() ?>" class="flex min-w-0 items-center font-semibold tracking-tight text-lg">
       <?php if ($logo): ?>
         <img src="<?= $logo->url() ?>" alt="<?= esc($site->title()) ?>" class="<?= $logoClass ?>">
       <?php else: ?>
@@ -62,8 +66,8 @@ $logoClass = 'h-12 w-auto';
       <?php snippet('language-switcher') ?>
     </div>
 
-    <div class="flex items-center gap-3 nav:hidden">
-      <?php snippet('cta-button', ['class' => 'text-xs px-3 py-1.5']) ?>
+    <?php /* On mobile the call-to-action is a floating button (see footer.php), so only the hamburger lives here. */ ?>
+    <div class="flex shrink-0 items-center nav:hidden">
       <button id="menu-toggle" class="p-2" aria-label="Toggle menu">
         <span class="block w-5 h-px bg-current mb-1.5"></span>
         <span class="block w-5 h-px bg-current mb-1.5"></span>

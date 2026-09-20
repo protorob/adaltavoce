@@ -52,6 +52,9 @@ $legalPages = $site->legalPages()->toStructure();
   </div>
 </footer>
 
+<?php /* Mobile-only floating call-to-action (bottom-right); the desktop one lives in the header nav. */ ?>
+<?php snippet('cta-button', ['floating' => true]) ?>
+
 <script type="module" src="<?= url('assets/js/main.js') ?>"></script>
 </body>
 </html>

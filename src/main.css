@@ -1,22 +1,47 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
+/* Inter, self-hosted (variable font, weights 100–900) — no request to Google
+   Fonts, which keeps the "no third-party resources" claim in the cookie policy
+   true. Only the Latin subset is declared (covers Italian accents, €, curly
+   quotes); the package's other subsets (latin-ext, cyrillic, greek, …) would
+   just add unused files to the build. Vite copies the woff2 into assets/. */
+@font-face {
+  font-family: "Inter Variable";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url("../node_modules/@fontsource-variable/inter/files/inter-latin-wght-normal.woff2") format("woff2-variations");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 @theme {
-  --font-sans: "Inter", sans-serif;
+  --font-sans: "Inter Variable", "Inter", ui-sans-serif, system-ui, sans-serif;
 
   /* Where the header switches from the hamburger menu to the full desktop nav.
-     Used as the `nav:` variant in site/snippets/header.php (nav:flex, nav:hidden).
-     rem-based, and the root is 125% (below), so 1rem = 20px: 40rem = 800px,
-     48rem = 960px, 64rem = 1280px. Raise it if the nav items wrap or crowd
+     Used as the `nav:` variant in site/snippets/header.php (nav:flex, nav:hidden)
+     and by the floating call-to-action button (visible only below it).
+     NOTE: media queries always resolve `rem` against the browser's default
+     16px, NOT the <html> font-size set below — so 64rem is 1024px on every
+     device, whatever the root scale is. Raise it if the nav items wrap or crowd
      the logo before the menu collapses. */
   --breakpoint-nav: 64rem;
 }
 
 html {
-  /* Bumps the rem base from 16px to 20px, scaling all text sitewide. Tailwind
-     sizes (text-*, spacing, max-w-*) are all rem-based, so this also widens
-     the layout containers — max-w-6xl goes from 1152px to 1440px. */
-  font-size: 125%;
+  /* Root font size scales with the screen, and every Tailwind size (text-*,
+     spacing, max-w-*, the header height) is rem-based, so this one knob
+     scales the whole site: 16px on phones, 18px from 640px, 20px from
+     1024px. (Media-query widths below are in rem = 16px, see the note above.) */
+  font-size: 100%;
+}
+
+@media (width >= 40rem) {
+  html { font-size: 112.5%; }
+}
+
+@media (width >= 64rem) {
+  html { font-size: 125%; }
 }
 
 /* Fallback for browsers without cross-document view transitions (below) —
@@ -42,4 +67,10 @@ main {
    with the rest of the page. */
 #site-header {
   view-transition-name: site-header;
+}
+
+/* Same idea for the floating call-to-action button (mobile only): it stays put
+   across page transitions instead of cross-fading with the page. */
+#cta-float {
+  view-transition-name: cta-float;
 }
