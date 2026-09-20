@@ -128,6 +128,20 @@ The hero banner's fields (eyebrow, title, description, buttons, background) live
 - Renders nothing if eyebrow/title/description/buttons are all empty — a page with the toggle on but no hero content shows nothing extra (and no `<h1>` at all, so fill in at least a title).
 - Colors are applied via inline `style` attributes (not Tailwind classes) since they're arbitrary values chosen at runtime in the Panel, not known at Tailwind's build time. Each dynamic value is escaped once with `esc($value, 'attr')` (the attribute-embedding context) — escaping with `'css'` first and `'attr'` again double-encodes and corrupts the style string.
 
+## Custom blocks: Child pages
+
+The page body's `blocks` field has one custom block on top of Kirby's core ones: **Child pages**. Pick a page and it renders that page's *listed* subpages as a two-column grid of cards.
+
+- **Files**: `site/blueprints/blocks/child-pages.yml` (the Panel form — just a page picker), `site/snippets/blocks/child-pages.php` (the markup), and `site/config/config.php`'s `blocks.fieldsets` list. Kirby only offers custom blocks once they're listed in `blocks.fieldsets`; setting it globally there means every `type: blocks` field gets them, with no per-blueprint `fieldsets:` list. That list also has to repeat Kirby's core blocks, since defining it replaces the default set.
+- **Card title**: the child page's title.
+- **Card description**: the child's **Page excerpt** (`pageExcerpt`, in the default blueprint's sidebar), shown under the title. Nothing renders if it's empty.
+- **Card image** (3:2, `aspect-[3/2]`, i.e. 6/4), in this order of precedence:
+  1. the child's **Miniatura Pagina** (`cardImage`);
+  2. otherwise the child's hero background image — but only while its hero is on (`heroToggle`) and set to the "Image" background type, since those fields are hidden in the Panel otherwise;
+  3. otherwise no image, and the card is text-only.
+- The whole card is one link, so the image is clickable too, and it zooms slightly on hover (`group-hover:scale-105`). The image is cropped by Kirby to 600/900/1400px-wide thumbnails (`srcset`) and is `alt=""` on purpose — the title is the link text, so the image is decorative.
+- The block uses `not-prose` because it sits inside `default.php`'s `.prose` wrapper, which would otherwise restyle the card links and headings.
+
 ## Multi-language support
 
 This base ships single-language by default, but is multi-language-ready: `site/snippets/language-switcher.php` renders nothing unless Kirby's multi-language mode is on, so it's already wired into `header.php` (desktop nav and mobile menu) with zero visual effect today.

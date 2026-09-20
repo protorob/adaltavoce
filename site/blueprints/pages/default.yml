@@ -28,7 +28,14 @@ tabs:
                 type: textarea
                 buttons: false
                 size: small
-
+              cardImage:
+                label: Miniatura Pagina
+                type: files
+                max: 1
+                layout: cards
+                image:
+                  ratio: 6/4
+                  cover: true
   hero:
     label: Hero
     fields:
