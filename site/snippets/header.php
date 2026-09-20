@@ -7,7 +7,7 @@ $logo = $site->logo()->toFile();
 $logoClass = 'h-12 w-auto';
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<?= $kirby->multilang() ? $kirby->language()->code() : 'it' ?>">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
