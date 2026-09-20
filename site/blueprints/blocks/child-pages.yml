@@ -1,0 +1,12 @@
+name: Child pages
+icon: page
+preview: fields
+
+fields:
+  page:
+    label: Page
+    type: pages
+    multiple: false
+    max: 1
+    required: true
+    help: Shows this page's listed subpages as a grid of cards.

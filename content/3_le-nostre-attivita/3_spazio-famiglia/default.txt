@@ -1,0 +1,57 @@
+Title: Spazio Famiglia
+
+----
+
+Text: [{"content":{"text":"<p>Lo Spazio Famiglia è un incontro con cadenza mensile dedicato alle famiglie con bambini da 0 a 11 anni e prevede:</p>"},"id":"ceaf7047-f5b3-400a-9241-2521035987a0","isHidden":false,"type":"text"},{"content":{"text":"<ul><li>laboratori creativi;</li><li>momenti di lettura ad alta voce animata;</li><li>incontri di lettura Nati per Leggere</li><li>uscite guidate alla scoperta del territorio con visite a luoghi di particolare interesse storico e culturale.</li></ul>"},"id":"4a035c2d-ac2f-4291-9e43-1814f7613507","isHidden":false,"type":"list"},{"content":{"text":"<p>Lo Spazio Famiglia è progettato per creare momenti di condivisione, confronto e socializzazione, promuovere la lettura come pratica condivisa e valorizzare la letteratura per l'infanzia, l’arte e la cultura a misura di famiglia.</p>"},"id":"0cbbd65d-9465-418f-85ba-ddfc8a0f7470","isHidden":false,"type":"text"}]
+
+----
+
+Herotoggle: false
+
+----
+
+Eyebrow: 
+
+----
+
+Herotitle: 
+
+----
+
+Herodescription: 
+
+----
+
+Herotextcolor: #ffffff
+
+----
+
+Herobuttons: 
+
+----
+
+Herofullwidth: false
+
+----
+
+Herobackgroundtype: image
+
+----
+
+Herobackgroundimage: 
+
+----
+
+Heroimageoverlay: false
+
+----
+
+Herooverlaycolor: #000000
+
+----
+
+Herobackgroundcolor: #171717
+
+----
+
+Uuid: svjipfrfnvdxzppf

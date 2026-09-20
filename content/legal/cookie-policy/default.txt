@@ -1,0 +1,57 @@
+Title: Cookie Policy
+
+----
+
+Text: [{"content":{"text":"<p>Spazio per la cookie policy</p>"},"id":"c59541e7-c7c5-47bc-b1e2-024c1d5233dd","isHidden":false,"type":"text"}]
+
+----
+
+Herotoggle: false
+
+----
+
+Eyebrow: 
+
+----
+
+Herotitle: 
+
+----
+
+Herodescription: 
+
+----
+
+Herotextcolor: #ffffff
+
+----
+
+Herobuttons: 
+
+----
+
+Herofullwidth: false
+
+----
+
+Herobackgroundtype: image
+
+----
+
+Herobackgroundimage: 
+
+----
+
+Heroimageoverlay: false
+
+----
+
+Herooverlaycolor: #000000
+
+----
+
+Herobackgroundcolor: #171717
+
+----
+
+Uuid: h8uakqy2m2unqqli

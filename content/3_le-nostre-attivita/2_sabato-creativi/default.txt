@@ -1,0 +1,57 @@
+Title: Sabato Creativi
+
+----
+
+Text: [{"content":{"text":"<p>Il Sabato Creativo è un incontro settimanale rivolto a bambini di età compresa tra i 5 e i 10 anni ma anche ai bambini della scuola dell'infanzia, se accompagnati da un adulto di riferimento.</p><p>Il nostro laboratorio creativo rappresenta uno spazio pedagogico attivo, aperto, stimolante e dinamico, concepito per promuovere il pensiero critico, la libera espressione del sé e la crescita globale della persona. Nel corso di ogni laboratorio creativo sarà condotto anche un momento di lettura condivisa, selezionando albi illustrati di qualità per fornire spunti di riflessione e confronto su situazioni in cui i partecipanti possono riconoscersi e indagare la sfera delle emozioni.</p><p>La strutturazione di ciascun laboratorio è pensata in modo tale da porre al centro della scena i reali bisogni dei partecipanti, offrendo un ambiente accogliente, protetto, stimolante e privo di qualsiasi forma di giudizio e pregiudizio.</p><p>Per la progettazione delle attività laboratoriali si terranno in considerazione i particolari momenti dell’anno, con riferimenti a ricorrenze e tradizioni popolari, religiose e non solo e con particolare attenzione alle diverse culture oggi presenti sul territorio, per favorire l’integrazione e promuovere una crescita aperta all'alterità, stimolando un forte senso civico fin dalla più tenera età.</p>"},"id":"d419ec60-f5b7-48ce-8ce7-8419a21d5f53","isHidden":false,"type":"text"}]
+
+----
+
+Herotoggle: false
+
+----
+
+Eyebrow: 
+
+----
+
+Herotitle: 
+
+----
+
+Herodescription: 
+
+----
+
+Herotextcolor: #ffffff
+
+----
+
+Herobuttons: 
+
+----
+
+Herofullwidth: false
+
+----
+
+Herobackgroundtype: image
+
+----
+
+Herobackgroundimage: 
+
+----
+
+Heroimageoverlay: false
+
+----
+
+Herooverlaycolor: #000000
+
+----
+
+Herobackgroundcolor: #171717
+
+----
+
+Uuid: fgr19h3wryg2qkz2

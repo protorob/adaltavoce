@@ -2,31 +2,31 @@ Title: Ad Alta Voce APS
 
 ----
 
-Ctaicon: 
+Ctaicon: whatsapp.svg
 
 ----
 
-Ctalabel: Contact →
+Ctalabel: Contattaci →
 
 ----
 
-Ctaurl: https://robertobriceno.eu
+Ctaurl: https://api.whatsapp.com/send/?phone=393291114874&text=Salve+vorrei+informazione+in+merito+a...
 
 ----
 
-Eyebrow: For lazy developers
+Eyebrow: 
 
 ----
 
-Herotitle: The only KirbyCMS Starter You'll Ever need for real.
+Herotitle: Lettura, arte e cultura per ogni bambino
 
 ----
 
-Herodescription: A KirbyCMS Starter project for websites of any size, sensible defaults and very opinionated. You'll have options for making it i18n ready, Add Deepl automatic content translation with (link: https://kirby.tools/content-translator text: Kirby Content Translator) and SEO features from (link: https://www.andkindness.com/seo text: SEO for Kirby CMS) from andkindness.
+Herodescription: Ad Alta Voce APS promuove la lettura, l'arte, la creatività e la cultura a misura di bambini e famiglie!
 
 ----
 
-Herotextcolor: #262626
+Herotextcolor: #ffffff
 
 ----
 
@@ -34,10 +34,10 @@ Herobuttons:
 
 - 
   icon: ""
-  label: Contact →
+  label: Le nostre attività →
   url: https://robertobriceno.eu/
-  color: '#171717'
-  textcolor: '#ffffff'
+  color: '#ff9400'
+  textcolor: '#141414'
 
 ----
 
@@ -61,7 +61,7 @@ Herooverlaycolor:
 
 ----
 
-Herobackgroundcolor: #e5e5e5
+Herobackgroundcolor: #602ba0
 
 ----
 
@@ -69,33 +69,54 @@ Logo:
 
 ----
 
-Companyname: 
+Companyname: Ad Alta Voce APS
 
 ----
 
-Companyaddress: 
+Companyaddress:
+
+Sede legale: Via Lazio 4, 92038 Montevago (AG)
+Sede operativa: Via Pirandello, 92038 Montevago (AG)
+C.F./P.IVA 92027940847
+assadaltavoce@pec.it
 
 ----
 
-Companyphone: 
+Companyphone: +39 329 111 4874
 
 ----
 
-Email: 
+Email: rosita@ssociazioneadaltavoce.it
 
 ----
 
-Legalpages: 
+Legalpages:
+
+- 
+  page:
+    - page://k2mgc5k8nw72zbwh
+- 
+  page:
+    - page://h8uakqy2m2unqqli
 
 ----
 
 Social:
 
 - 
-  icon: github.svg
-  label: Github
+  icon: instagram.svg
+  label: Instagram
   url: >
-    https://github.com/protorob/kirbycms-tailwind-base
+    https://www.instagram.com/ad_alta_voce_aps/
+- 
+  icon: facebook.svg
+  label: Facebook
+  url: >
+    https://www.facebook.com/associazioneadaltavoce/
+- 
+  icon: whatsapp.svg
+  label: WhatsApp
+  url: 'https://api.whatsapp.com/send/?phone=393291114874&text=Salve+vorrei+informazione+in+merito+a...'
 
 ----
 

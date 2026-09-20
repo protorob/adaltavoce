@@ -1,0 +1,57 @@
+Title: Le Nostre Attività
+
+----
+
+Text: [{"content":{"page":["page://u5kufd5afnf0nndr"]},"id":"e3fcaf20-7963-443c-a88c-17cc09a44282","isHidden":false,"type":"child-pages"}]
+
+----
+
+Herotoggle: true
+
+----
+
+Eyebrow: 
+
+----
+
+Herotitle: Le Nostre Attività
+
+----
+
+Herodescription: Le nostre attività sono pensate per bambini, famiglie e comunità: momenti di lettura, arte e creatività per crescere insieme.
+
+----
+
+Herotextcolor: #ffffff
+
+----
+
+Herobuttons: 
+
+----
+
+Herofullwidth: true
+
+----
+
+Herobackgroundtype: color
+
+----
+
+Herobackgroundimage: 
+
+----
+
+Heroimageoverlay: false
+
+----
+
+Herooverlaycolor: #000000
+
+----
+
+Herobackgroundcolor: #1fa39a
+
+----
+
+Uuid: u5kufd5afnf0nndr

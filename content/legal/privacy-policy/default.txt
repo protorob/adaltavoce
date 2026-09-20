@@ -1,0 +1,57 @@
+Title: Privacy Policy
+
+----
+
+Text: [{"content":{"text":"<p>Questa è la nostra privacy policy</p>"},"id":"e9da1323-15f4-452c-b7a3-144c6a445109","isHidden":false,"type":"text"}]
+
+----
+
+Herotoggle: false
+
+----
+
+Eyebrow: 
+
+----
+
+Herotitle: 
+
+----
+
+Herodescription: 
+
+----
+
+Herotextcolor: #ffffff
+
+----
+
+Herobuttons: 
+
+----
+
+Herofullwidth: false
+
+----
+
+Herobackgroundtype: image
+
+----
+
+Herobackgroundimage: 
+
+----
+
+Heroimageoverlay: false
+
+----
+
+Herooverlaycolor: #000000
+
+----
+
+Herobackgroundcolor: #171717
+
+----
+
+Uuid: k2mgc5k8nw72zbwh

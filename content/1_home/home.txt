@@ -1,0 +1,57 @@
+Title: Home
+
+----
+
+Text: 
+
+----
+
+Herotoggle: true
+
+----
+
+Eyebrow: 
+
+----
+
+Herotitle: 
+
+----
+
+Herodescription: 
+
+----
+
+Herotextcolor: 
+
+----
+
+Herobuttons: 
+
+----
+
+Herofullwidth: false
+
+----
+
+Herobackgroundtype: 
+
+----
+
+Herobackgroundimage: 
+
+----
+
+Heroimageoverlay: false
+
+----
+
+Herooverlaycolor: 
+
+----
+
+Herobackgroundcolor: 
+
+----
+
+Uuid: milipo7ogmvantjc
