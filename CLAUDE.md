@@ -2,9 +2,7 @@
 
 ## What this project is
 
-A Kirby CMS base project: [Plainkit](https://github.com/getkirby/plainkit) + Tailwind CSS v4, set up as a reusable starting point for new client sites. This particular repo is the template itself — it has no client-specific content beyond the Plainkit defaults (a `home` page and an `error` page).
-
-When cloned to start a new project, add pages, blueprints, templates and content on top of this base. See "Starting a new project from this base" in the README.
+The website of **Ad Alta Voce APS**, an Italian association (Montevago, AG) promoting reading, art, creativity and culture for children and families. Italian-only, aimed at parents; contact is mainly via a WhatsApp call-to-action button, plus email/PEC. No forms, shop or donations. Built on [Plainkit](https://github.com/getkirby/plainkit) (Kirby CMS 5) + Tailwind CSS v4, hosted on DreamHost (USA), with self-hosted Umami analytics (Hetzner, Germany) planned after the first deploy is verified. It started life as a reusable Kirby base template, so much of the structure (shared hero fragment, Site-panel chrome, `setup-languages.sh`) is generic, but `content/` is now this association's real content — treat it as live client data (see the note under "Running locally"). The README documents setup, running, deploying and pulling content.
 
 ## Tech stack
 
@@ -30,17 +28,19 @@ Panel: `http://localhost:8000/panel` (prompts to create the first admin account)
 
 The port is configurable: `PORT=8001 composer start` (default 8000). `composer.json`'s start script uses `${PORT:-8000}`, which `@php` passes through `sh`, so it works on Linux/macOS/WSL but not native Windows `cmd`.
 
+**`content/` is live client data, often uncommitted** (the user edits it in the Panel on their own dev server, typically `PORT=8001`). Never run `git checkout`/`clean`/`restore`/`stash` against it, and run any render/update tests against a copy of the project's content (point Kirby's `roots.content` at a scratch copy) — an earlier session wiped uncommitted Panel work by "cleaning up" after a test.
+
 Always run `npm run build` (or keep `npm run dev` running) after changing CSS classes or JS — templates reference `assets/css/main.css` and `assets/js/main.js` directly, not the `src/` files.
 
 ## Project structure
 
 ```
-content/            ← pages and uploaded files
+content/            ← pages and uploaded files (git-tracked; includes legal/ with the real privacy + cookie policies)
 site/
-  blueprints/       ← Panel field definitions (pages/default.yml, site.yml, fields/hero.yml shared hero fragment)
-  config/           ← config.php (email, SMTP, plugin settings) — not created yet
-  plugins/          ← custom and third-party plugins — none yet
-  snippets/         ← header.php, footer.php (shared page chrome), hero.php, cta-button.php
+  blueprints/       ← Panel field definitions (pages/default.yml, site.yml, fields/hero.yml shared hero fragment, blocks/child-pages.yml)
+  config/           ← config.php (icon-field cache setting, global `blocks.fieldsets` list) — no email/SMTP configured
+  plugins/          ← composer-managed third-party plugins (kirby-icon-field, gitignored) — no hand-written ones
+  snippets/         ← header.php, footer.php (shared page chrome), hero.php, cta-button.php, language-switcher.php, blocks/child-pages.php
   templates/        ← default.php — one .php per page type as the project grows
 src/
   main.js           ← JS entry (imports main.css, mobile menu toggle)
@@ -67,10 +67,12 @@ assets/             ← Vite build output (gitignored, rebuilt via npm run build
 
 ## Deploying
 
-`deploy-example.sh` is the committed template — copy it to `deploy.sh` (gitignored, holds real server credentials) and fill in the target server's SSH/PHP/Composer details. `deploy.sh` does not exist in this repo yet since it's server-specific; each project cloned from this base creates its own. See the README's "Deploying to a live server" section for the full walkthrough.
+`deploy-example.sh` is the committed template — copy it to `deploy.sh` (gitignored, holds real server credentials) and fill in the SSH/PHP/Composer details. `deploy.sh` exists locally for this project (target: DreamHost VPS); never commit it. See the README's "Deploying to a live server" section for the full walkthrough.
 
 `vendor/` and `kirby/` are never uploaded — Composer runs on the server after each deploy so dependencies build against the server's own PHP version.
 
-## Starting a new project from this base
+`site/accounts`, `site/sessions` and `site/cache` are excluded from the rsync as whole *directories*, so on a brand-new server rsync never creates them — create them once by hand *before the first deploy*, or Kirby has nowhere to write the Panel's first account and `/panel` gets stuck with no visible error. Even then, an empty `site/accounts` on the server makes `/panel` say "The panel cannot be installed" (Kirby's `panel.install` security default on public servers); the README's "Creating the first Panel account" has the two fixes (rsync your local `site/accounts/` over once by hand, or temporarily set `'panel' => ['install' => true]` in the *server's* `config.php` only). Don't add `site/accounts` to the regular deploy — it would overwrite passwords changed in the live Panel.
 
-See the README section "Using this as a base for a new project" for the step-by-step (fresh git history, renaming `composer.json`, updating `site.yml` title, etc).
+`content/` is *not* excluded from the deploy, so a deploy overwrites whatever the association edited in the live Panel. Run `pull.sh` first. Both `deploy.sh` and `deploy-example.sh` therefore open with a `[y/N]` confirmation (default no; only `y`/`yes` continues, EOF/anything else aborts before building or uploading) that says exactly this and points to `./pull.sh` — keep that prompt if the scripts are edited.
+
+`pull-example.sh` (copy to `pull.sh`, gitignored like `deploy.sh`, same server values) is the reverse direction: an rsync of `content/` only, from the server down to local, with `--dry-run` supported. It never deletes local-only files but does overwrite files that exist on both sides, so commit local content edits before pulling. Both `deploy-example.sh` and `deploy.sh` exclude `pull.sh`/`pull-example.sh` from the upload, since `pull.sh` holds server credentials. See README's "Pulling content from the server".

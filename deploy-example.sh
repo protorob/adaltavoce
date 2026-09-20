@@ -31,6 +31,19 @@ COMPOSER_BIN="~/composer"                # path to composer on the server
 
 set -e
 
+# Failsafe: rsync below overwrites the server's content/ (pages + uploads) with
+# the local copy, so any edit made in the live Panel since the last ./pull.sh
+# would be lost. Default answer is "no".
+echo "⚠  This deploy will OVERWRITE the content on ${SSH_HOST} with your LOCAL content."
+echo "   Pages or images edited in the live Panel since your last pull will be lost."
+echo
+read -r -p "   Are you sure you want to deploy? [y/N]  (n = exit, then run ./pull.sh first) " CONFIRM || CONFIRM=""
+if [[ ! "$CONFIRM" =~ ^[Yy]([Ee][Ss])?$ ]]; then
+  echo "✗ Deploy cancelled. Run ./pull.sh first to bring the server's content down, review it, then deploy again."
+  exit 1
+fi
+echo
+
 echo "→ Building assets..."
 npm run build
 
@@ -44,6 +57,8 @@ rsync -avz --progress \
   --exclude='kirby/' \
   --exclude='deploy.sh' \
   --exclude='deploy-example.sh' \
+  --exclude='pull.sh' \
+  --exclude='pull-example.sh' \
   --exclude='README.md' \
   --exclude='site/accounts' \
   --exclude='site/sessions' \

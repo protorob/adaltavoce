@@ -73,7 +73,8 @@ Icon
 
 /site/config/.license
 
-# Deployment script (contains server credentials)
+# Deployment / pull scripts (contain server credentials)
 # ---------------
 
 /deploy.sh
+/pull.sh
