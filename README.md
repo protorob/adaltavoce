@@ -1,6 +1,6 @@
 # Ad Alta Voce APS — website
 
-The website of **Ad Alta Voce APS**, an association based in Montevago (AG), Sicily, that promotes reading, art, creativity and culture for children and families. It is hosted on the domain associazioneadaltavoce.it (first deploy still to be done at the time of writing).
+The website of **Ad Alta Voce APS**, an association based in Montevago (AG), Sicily, that promotes reading, art, creativity and culture for children and families. It is hosted on the domain associazioneadaltavoce.it .
 
 The site is in **Italian only** and is aimed mainly at parents. It presents the association, its activities (creative campuses, Saturday workshops, family space) and how to get in touch — mainly through WhatsApp, which is the association's preferred channel besides email/PEC. There are no forms, no shop and no donations, and the site sets no cookies (see [Legal pages and analytics](#legal-pages-and-analytics)).
 
@@ -250,9 +250,13 @@ After the first deploy, visiting `/panel` shows **"The panel cannot be installed
 
 - **Copy your local account over (simplest, same login everywhere):**
   ```bash
-  rsync -avz -e "ssh -p ${SSH_PORT}" site/accounts/ ${SSH_USER}@${SSH_HOST}:${REMOTE_PATH}/site/accounts/
+  # those four variables only exist inside deploy.sh, not in your terminal — load them first
+  source <(grep -E '^(SSH_USER|SSH_HOST|REMOTE_PATH|SSH_PORT)=' deploy.sh)
+
+  rsync -avz --dry-run -e "ssh -p ${SSH_PORT}" site/accounts/ ${SSH_USER}@${SSH_HOST}:${REMOTE_PATH}/site/accounts/   # preview
+  rsync -avz           -e "ssh -p ${SSH_PORT}" site/accounts/ ${SSH_USER}@${SSH_HOST}:${REMOTE_PATH}/site/accounts/   # do it
   ```
-  (use the same `SSH_USER`/`SSH_HOST`/`REMOTE_PATH`/`SSH_PORT` values as in `deploy.sh`). This only works if you already created an account locally (`http://localhost:8000/panel` prompts for one on first visit). Log in with the same email/password afterward — you can change the password from inside the live Panel if you want it different from your local one. This is a one-time manual step, not something to add to `deploy.sh` — keep `site/accounts` excluded from the regular rsync, otherwise a password changed on the live Panel later would get silently overwritten by your local account on the next deploy.
+  Run this from the project root. Skipping the `source` line makes the variables expand to nothing, and ssh fails with `Bad port '-l'`. This only works if you already created an account locally (`http://localhost:8000/panel` prompts for one on first visit). Log in with the same email/password afterward — you can change the password from inside the live Panel if you want it different from your local one. This is a one-time manual step, not something to add to `deploy.sh` — keep `site/accounts` excluded from the regular rsync, otherwise a password changed on the live Panel later would get silently overwritten by your local account on the next deploy.
 
 - **Enable the installer temporarily instead (separate credentials per environment):** SSH in and edit the *server's* `site/config/config.php` directly (not the local repo — this should never be committed) to add:
   ```php

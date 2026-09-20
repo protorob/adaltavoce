@@ -6,7 +6,7 @@ return [
 	// (not by folder contents), so a new SVG never invalidates the cache on
 	// its own — see README's "Site panel defaults".
 	'tobimori.icon-field' => [
-		'cache' => false
+		'cache' => true
 	],
 
 	// Global block list for every `type: blocks` field. Kirby's default is
