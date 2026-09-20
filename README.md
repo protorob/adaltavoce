@@ -65,6 +65,8 @@ Then open `http://localhost:8000` in your browser.
 
 The Kirby Panel is available at `http://localhost:8000/panel` — you will be prompted to create an admin account on first visit.
 
+Port 8000 already taken (e.g. by another site)? Set `PORT` to use a different one: `PORT=8001 composer start`, then open `http://localhost:8001`. This relies on shell variable expansion, so on Windows run it from WSL.
+
 ## Starting a new project from this base
 
 To spin up a new client site from this template:

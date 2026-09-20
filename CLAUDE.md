@@ -28,6 +28,8 @@ npm run dev
 Site: `http://localhost:8000`
 Panel: `http://localhost:8000/panel` (prompts to create the first admin account)
 
+The port is configurable: `PORT=8001 composer start` (default 8000). `composer.json`'s start script uses `${PORT:-8000}`, which `@php` passes through `sh`, so it works on Linux/macOS/WSL but not native Windows `cmd`.
+
 Always run `npm run build` (or keep `npm run dev` running) after changing CSS classes or JS — templates reference `assets/css/main.css` and `assets/js/main.js` directly, not the `src/` files.
 
 ## Project structure
