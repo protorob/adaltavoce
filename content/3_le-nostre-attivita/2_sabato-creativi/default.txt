@@ -6,6 +6,14 @@ Text: [{"content":{"text":"<p>Il nostro laboratorio creativo rappresenta uno spa
 
 ----
 
+Pageexcerpt: Laboratori creativi e di lettura per bambini dai 5 ai 10 anni (o della scuola dell'infanzia con adulto). Uno spazio stimolante e senza giudizio per stimolare il pensiero critico, l'integrazione e la libera espressione attraverso l'arte, le tradizioni e le emozioni.
+
+----
+
+Cardimage: 
+
+----
+
 Herotoggle: true
 
 ----
@@ -34,19 +42,19 @@ Herofullwidth: true
 
 ----
 
-Herobackgroundtype: color
+Herobackgroundtype: image
 
 ----
 
-Herobackgroundimage: 
+Herobackgroundimage: - file://msjdyrnslilopwzb
 
 ----
 
-Heroimageoverlay: false
+Heroimageoverlay: true
 
 ----
 
-Herooverlaycolor: #000000
+Herooverlaycolor: #4d406b
 
 ----
 

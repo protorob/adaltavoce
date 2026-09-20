@@ -6,6 +6,14 @@ Text: [{"content":{"level":"h2","text":"I nostri Campus Creativi prevedono le se
 
 ----
 
+Pageexcerpt: Colonie estive (5-10 anni) all'insegna dell'arte e della creatività. Tra laboratori artistici professionali, giochi all'aperto, letture condivise di albi illustrati ed emozionanti uscite didattiche, i bambini vivono un'esperienza unica di socializzazione, crescita e divertimento.
+
+----
+
+Cardimage: 
+
+----
+
 Herotoggle: true
 
 ----
@@ -34,23 +42,23 @@ Herofullwidth: true
 
 ----
 
-Herobackgroundtype: color
+Herobackgroundtype: image
 
 ----
 
-Herobackgroundimage: 
+Herobackgroundimage: - file://w2rhh079rvu0ckmj
 
 ----
 
-Heroimageoverlay: false
+Heroimageoverlay: true
 
 ----
 
-Herooverlaycolor: #000000
+Herooverlaycolor: #4d406b
 
 ----
 
-Herobackgroundcolor: #3c6fb7
+Herobackgroundcolor: #4d406b
 
 ----
 

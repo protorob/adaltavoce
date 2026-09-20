@@ -6,6 +6,14 @@ Text: [{"content":{"text":"<p>La nostra missione è contrastare la povertà educ
 
 ----
 
+Pageexcerpt: 
+
+----
+
+Cardimage: 
+
+----
+
 Herotoggle: true
 
 ----
@@ -46,7 +54,7 @@ Heroimageoverlay: true
 
 ----
 
-Herooverlaycolor: #6748c4
+Herooverlaycolor: #4d406b
 
 ----
 

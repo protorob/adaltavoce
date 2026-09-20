@@ -10,7 +10,7 @@ Pageexcerpt:
 
 ----
 
-Cardimage: - file://28pch1k4jn0omf0l
+Cardimage: 
 
 ----
 
