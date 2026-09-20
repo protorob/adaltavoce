@@ -1,0 +1,27 @@
+{
+  "name": "protorob/kirby-base",
+  "description": "Kirby CMS + Plainkit + Tailwind base project, used as a starting point for new sites",
+  "type": "project",
+  "keywords": [
+    "kirby",
+    "cms",
+    "plainkit"
+  ],
+  "require": {
+    "php": "~8.2.0 || ~8.3.0 || ~8.4.0 || ~8.5.0",
+    "getkirby/cms": "^5.2",
+    "tobimori/kirby-icon-field": "^2.3"
+  },
+  "config": {
+    "allow-plugins": {
+      "getkirby/composer-installer": true
+    },
+    "optimize-autoloader": true
+  },
+  "scripts": {
+    "start": [
+      "Composer\\Config::disableProcessTimeout",
+      "@php -S localhost:8000 kirby/router.php"
+    ]
+  }
+}

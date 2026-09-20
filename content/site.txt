@@ -1,0 +1,114 @@
+Title: Site Title
+
+----
+
+Ctaicon: 
+
+----
+
+Ctalabel: Contact →
+
+----
+
+Ctaurl: https://robertobriceno.eu
+
+----
+
+Eyebrow: For lazy developers
+
+----
+
+Herotitle: The only KirbyCMS Starter You'll Ever need for real.
+
+----
+
+Herodescription: A KirbyCMS Starter project for websites of any size, sensible defaults and very opinionated. You'll have options for making it i18n ready, Add Deepl automatic content translation with (link: https://kirby.tools/content-translator text: Kirby Content Translator) and SEO features from (link: https://www.andkindness.com/seo text: SEO for Kirby CMS) from andkindness.
+
+----
+
+Herotextcolor: #262626
+
+----
+
+Herobuttons:
+
+- 
+  icon: ""
+  label: Contact →
+  url: https://robertobriceno.eu/
+  color: '#171717'
+  textcolor: '#ffffff'
+
+----
+
+Herofullwidth: true
+
+----
+
+Herobackgroundtype: color
+
+----
+
+Herobackgroundimage: 
+
+----
+
+Heroimageoverlay: false
+
+----
+
+Herooverlaycolor: 
+
+----
+
+Herobackgroundcolor: #e5e5e5
+
+----
+
+Logo: 
+
+----
+
+Companyname: 
+
+----
+
+Companyaddress: 
+
+----
+
+Companyphone: 
+
+----
+
+Email: 
+
+----
+
+Legalpages: 
+
+----
+
+Social:
+
+- 
+  icon: github.svg
+  label: Github
+  url: >
+    https://github.com/protorob/kirbycms-tailwind-base
+
+----
+
+Privacypage: 
+
+----
+
+Cookiepage: 
+
+----
+
+Heropaddingx: 
+
+----
+
+Heropaddingy: 
