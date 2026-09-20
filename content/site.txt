@@ -53,23 +53,23 @@ Herofullwidth: true
 
 ----
 
-Herobackgroundtype: color
+Herobackgroundtype: image
 
 ----
 
-Herobackgroundimage: 
+Herobackgroundimage: - file://ejm2t9wibcobc4vq
 
 ----
 
-Heroimageoverlay: false
+Heroimageoverlay: true
 
 ----
 
-Herooverlaycolor: 
+Herooverlaycolor: #53296b
 
 ----
 
-Herobackgroundcolor: #602ba0
+Herobackgroundcolor: 
 
 ----
 

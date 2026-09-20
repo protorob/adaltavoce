@@ -5,6 +5,13 @@
   --font-sans: "Inter", sans-serif;
 }
 
+html {
+  /* Bumps the rem base from 16px to 20px, scaling all text sitewide. Tailwind
+     sizes (text-*, spacing, max-w-*) are all rem-based, so this also widens
+     the layout containers — max-w-6xl goes from 1152px to 1440px. */
+  font-size: 125%;
+}
+
 /* Fallback for browsers without cross-document view transitions (below) —
    scoped to <main> only, so the header/nav never fades between page loads. */
 main {

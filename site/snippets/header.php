@@ -13,9 +13,9 @@ $logo = $site->logo()->toFile();
 <body class="min-h-screen flex flex-col bg-white font-sans text-neutral-800 antialiased">
 
 <header id="site-header" class="relative z-40 border-b border-neutral-200">
-  <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+  <div class="max-w-6xl mx-auto px-4 h-20 flex items-center justify-between">
 
-    <a href="<?= $site->url() ?>" class="flex items-center font-semibold tracking-tight text-lg">
+    <a href="<?= $site->url() ?>" class="flex items-center shrink-0 font-semibold tracking-tight text-lg">
       <?php if ($logo): ?>
         <img src="<?= $logo->url() ?>" alt="<?= esc($site->title()) ?>" class="h-8 w-auto">
       <?php else: ?>
@@ -24,7 +24,7 @@ $logo = $site->logo()->toFile();
     </a>
 
     <div class="hidden sm:flex items-center gap-6">
-      <nav class="flex items-center gap-6 text-sm">
+      <nav class="flex items-center gap-8 text-sm">
         <?php foreach ($navItems as $item): ?>
           <?php $subItems = $item->children()->listed() ?>
           <?php if ($subItems->isNotEmpty()): ?>
