@@ -8,7 +8,7 @@ $logo = $site->logo()->toFile();
 // h-9 ≈ 144px wide on a phone and h-12 ≈ 240px wide on desktop (`nav:` = the
 // desktop-nav breakpoint). Try h-8 … h-10 for mobile and h-10 … h-16 for desktop.
 // max-w-full + object-contain keep it from ever overflowing the header.
-$logoClass = 'h-9 nav:h-12 w-auto max-w-full object-contain object-left';
+$logoClass = 'h-13 nav:h-16 w-auto max-w-full object-contain object-left';
 ?>
 <!DOCTYPE html>
 <html lang="<?= $kirby->multilang() ? $kirby->language()->code() : 'it' ?>">
