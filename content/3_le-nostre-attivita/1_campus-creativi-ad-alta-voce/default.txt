@@ -2,11 +2,11 @@ Title: Campus Creativi ad Alta Voce
 
 ----
 
-Text: [{"content":{"text":"<p>I Campus Creativi sono colonie estive dedicate all'arte, alla sperimentazione e alla scoperta, rivolti ai bambini della scuola dell’infanzia e primaria (5-10anni).</p>"},"id":"529f435e-f6e8-420d-b500-4046ce714835","isHidden":false,"type":"text"},{"content":{"level":"h2","text":"I nostri Campus Creativi prevedono le seguenti attività:"},"id":"81185009-fc53-419c-8245-6a01093e4f42","isHidden":false,"type":"heading"},{"content":{"text":"<ul><li>Laboratori artistici</li><li>Giochi all'aperto</li><li>Momenti di lettura ad alta voce</li><li>Uscite didattiche</li></ul>"},"id":"3314bb74-8815-4c91-afc5-05b5c3c01d1a","isHidden":false,"type":"list"},{"content":{"text":"<p>I laboratori creativi sono selezionati e programmati con cura, permettendo ai partecipanti di sperimentare tecniche diverse, esplorare e potenziare la propria creatività e portare a termine i progetti artistici grazie all'utilizzo di materiali e strumenti professionali di qualità.</p><p>Il momento del gioco è fondamentale per favorire la socializzazione, la condivisione e creare momenti di confronto e riflessione, senza trascurare il divertimento.</p><p>Non manca mai il momento della lettura condivisa, selezionando albi illustrati di qualità che permettono di riflettere e confrontarsi su situazioni in cui i partecipanti possono riconoscersi e indagare la sfera delle emozioni.</p><p>Per un'esperienza unica e completa, ogni Campus prevede 1-2 uscite didattiche, scegliendo come destinazione luoghi di grande valore artistico e culturale.</p>"},"id":"ed4d5468-e2ed-4522-8f65-4fd4df902f02","isHidden":false,"type":"text"}]
+Text: [{"content":{"level":"h2","text":"I nostri Campus Creativi prevedono le seguenti attività:"},"id":"81185009-fc53-419c-8245-6a01093e4f42","isHidden":false,"type":"heading"},{"content":{"text":"<ul><li>Laboratori artistici</li><li>Giochi all'aperto</li><li>Momenti di lettura ad alta voce</li><li>Uscite didattiche</li></ul>"},"id":"3314bb74-8815-4c91-afc5-05b5c3c01d1a","isHidden":false,"type":"list"},{"content":{"text":"<p>I laboratori creativi sono selezionati e programmati con cura, permettendo ai partecipanti di sperimentare tecniche diverse, esplorare e potenziare la propria creatività e portare a termine i progetti artistici grazie all'utilizzo di materiali e strumenti professionali di qualità.</p><p>Il momento del gioco è fondamentale per favorire la socializzazione, la condivisione e creare momenti di confronto e riflessione, senza trascurare il divertimento.</p><p>Non manca mai il momento della lettura condivisa, selezionando albi illustrati di qualità che permettono di riflettere e confrontarsi su situazioni in cui i partecipanti possono riconoscersi e indagare la sfera delle emozioni.</p><p>Per un'esperienza unica e completa, ogni Campus prevede 1-2 uscite didattiche, scegliendo come destinazione luoghi di grande valore artistico e culturale.</p>"},"id":"ed4d5468-e2ed-4522-8f65-4fd4df902f02","isHidden":false,"type":"text"}]
 
 ----
 
-Herotoggle: false
+Herotoggle: true
 
 ----
 
@@ -14,11 +14,11 @@ Eyebrow:
 
 ----
 
-Herotitle: 
+Herotitle: Campus Creativi ad Alta Voce
 
 ----
 
-Herodescription: 
+Herodescription: I Campus Creativi sono colonie estive dedicate all'arte, alla sperimentazione e alla scoperta, rivolti ai bambini della scuola dell’infanzia e primaria (5-10anni).
 
 ----
 
@@ -30,11 +30,11 @@ Herobuttons:
 
 ----
 
-Herofullwidth: false
+Herofullwidth: true
 
 ----
 
-Herobackgroundtype: image
+Herobackgroundtype: color
 
 ----
 
@@ -50,7 +50,7 @@ Herooverlaycolor: #000000
 
 ----
 
-Herobackgroundcolor: #171717
+Herobackgroundcolor: #3c6fb7
 
 ----
 

@@ -52,7 +52,7 @@ $textStyle = $model->heroTextColor()->isNotEmpty()
       <?php endif ?>
 
       <?php if ($heroDescription->isNotEmpty()): ?>
-        <p class="mt-4 text-lg opacity-80 max-w-2xl mx-auto [&_a]:underline"><?= $heroDescription->kti() ?></p>
+        <p class="mt-4 text-lg max-w-2xl mx-auto [&_a]:underline"><?= $heroDescription->kti() ?></p>
       <?php endif ?>
 
       <?php if ($heroButtons->isNotEmpty()): ?>

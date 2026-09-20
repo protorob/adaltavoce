@@ -1,5 +1,18 @@
 title: Site
 
+# Same palette as fields/hero.yml — YAML anchors don't cross files, so keep the
+# two lists in sync (or update both) when a project defines its own brand colors.
+.cta-swatches: &ctaSwatches
+  "#ffffff": White
+  "#fafafa": Neutral 50
+  "#f5f5f5": Neutral 100
+  "#e5e5e5": Neutral 200
+  "#a3a3a3": Neutral 400
+  "#404040": Neutral 700
+  "#262626": Neutral 800
+  "#171717": Neutral 900
+  "#000000": Black
+
 tabs:
   content:
     label: Content
@@ -29,6 +42,20 @@ tabs:
         label: URL
         type: link
         options: [url, email, tel, anchor]
+
+      ctaColor:
+        label: Button color
+        type: color
+        options: *ctaSwatches
+        default: "#262626"
+        width: 1/2
+
+      ctaTextColor:
+        label: Text color
+        type: color
+        options: *ctaSwatches
+        default: "#ffffff"
+        width: 1/2
 
       heroHeadline:
         type: headline

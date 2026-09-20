@@ -1,0 +1,57 @@
+Title: I Nostri Contatti
+
+----
+
+Text: [{"content":{"text":"**Email:** rosita@associazioneadaltavoce.it  \n**Telefono:** +39 329 111 4874  \n**Sede Legale:** Via Lazio 4, 92038 Montevago (AG)  \n**Sede operativa:** Via Pirandello, 92038 Montevago (AG)\n\n## Sostienici\n\n**Il tuo sostegno è prezioso. Puoi sostenerci donando il tuo 5x1000 oppure con una donazione diretta.**\n\n- **5x1000 — Codice fiscale:** 92027940847\n- **Donazione diretta:** IBAN IT 69 V 08946 83010 000000758337"},"id":"9a31e6d7-e589-45e0-9a3d-4a3b15749f9d","isHidden":false,"type":"markdown"}]
+
+----
+
+Herotoggle: true
+
+----
+
+Eyebrow: 
+
+----
+
+Herotitle: I Nostri Contatti
+
+----
+
+Herodescription: 
+
+----
+
+Herotextcolor: #ffffff
+
+----
+
+Herobuttons: 
+
+----
+
+Herofullwidth: true
+
+----
+
+Herobackgroundtype: color
+
+----
+
+Herobackgroundimage: 
+
+----
+
+Heroimageoverlay: false
+
+----
+
+Herooverlaycolor: #000000
+
+----
+
+Herobackgroundcolor: #16827a
+
+----
+
+Uuid: oolktwjeigarma0g

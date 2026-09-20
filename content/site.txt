@@ -14,6 +14,14 @@ Ctaurl: https://api.whatsapp.com/send/?phone=393291114874&text=Salve+vorrei+info
 
 ----
 
+Ctacolor: #3ca535
+
+----
+
+Ctatextcolor: #ffffff
+
+----
+
 Eyebrow: 
 
 ----
@@ -35,7 +43,7 @@ Herobuttons:
 - 
   icon: ""
   label: Le nostre attività →
-  url: https://robertobriceno.eu/
+  url: '#'
   color: '#ff9400'
   textcolor: '#141414'
 
