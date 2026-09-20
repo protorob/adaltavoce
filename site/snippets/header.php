@@ -13,6 +13,7 @@ $logoClass = 'h-12 w-auto';
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><?= $page->title() ?> — <?= $site->title() ?></title>
   <link rel="stylesheet" href="<?= url('assets/css/main.css') ?>">
+  <script defer src="https://umami.artomultiplo.dev/script.js" data-website-id="fe8e29ae-8dfa-4512-b912-ca9fb802e477"></script>
 </head>
 <body class="min-h-screen flex flex-col bg-white font-sans text-neutral-800 antialiased">
 
